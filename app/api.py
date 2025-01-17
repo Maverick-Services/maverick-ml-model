@@ -5,12 +5,20 @@ import string
 import nltk
 from app.utils import predict_intent, generate_response
 
-# Ensure punkt is downloaded
+# Set the NLTK data path manually
+nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
+if not os.path.exists(nltk_data_path):
+    os.makedirs(nltk_data_path)
+nltk.data.path.append(nltk_data_path)
+
+# Attempt to find the 'punkt' tokenizer
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
-    nltk.download('punkt')
+    print("punkt not found, downloading...")
+    nltk.download('punkt', download_dir=nltk_data_path)
 
+# Your code continues...
 # Initialize Flask app
 app = Flask(__name__)
 
