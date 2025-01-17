@@ -1,0 +1,97 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening"],
+      "responses": ["Hello!", "Hi there!", "Greetings!"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": ["Goodbye!", "Take care!", "See you soon!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful"],
+      "responses": ["You're welcome!", "Happy to help!", "No problem!"]
+    },
+    {
+      "tag": "services",
+      "patterns": ["What services do you offer?", "Tell me about your services", "What can you do for me?", "What services do you provide?"],
+      "responses": [
+        "We provide IT services such as Digital Presence Management and Core Technical Services. What services are you interested in?",
+        "- Digital Presence Management\n- IT Core Technical Services"
+      ]
+    },
+    {
+      "tag": "digital_presence_management",
+      "patterns": [
+        "Tell me more about Digital Presence Management",
+        "What is Digital Presence Management?",
+        "What services are included in Digital Presence Management?"
+      ],
+      "responses": [
+        "Digital Presence Management includes the following services:\n\n- [E-commerce startup] https://maverickservices.in/best-seo-service-in-delhi/ \n\n- Brand Management Services\n\n- Digital Marketing & SEO\n\n- Website/App Development"
+      ]
+    },    
+    {
+      "tag": "it_technical_services",
+      "patterns": ["Tell me more about Core Technical Services", "What is IT Core Technical Services?", "Can you explain IT Core Technical Services?"],
+      "responses": [
+        "Our Core Technical Services include the following:\n- Network Penetration Testing\n- Cyber Security\n- Managed IT Services\n- IT Recruitment"
+      ]
+    },
+    {
+      "tag": "avail_services",
+      "patterns": ["How can I avail these services?", "How do I access these services?", "How can I get started with your services?"],
+      "responses": [
+        "To avail our services, please visit our website at www.maverickservices.in and contact us through the contact form or reach us directly at https://maverickservices.in/contact-us/."
+      ]
+    },
+    {
+      "tag": "location",
+      "patterns": ["Where is your location?", "Where are you located?", "Can you tell me your address?", "What is your physical location?"],
+      "responses": [
+        "We are based in New Delhi, India. You can contact us via our website or visit us at our office for more details."
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": ["How can I contact you?","how to connect", "How do I get in touch?", "What is your contact information?", "Can I reach you online?"],
+      "responses": [
+        "You can contact us through the contact form on our website at https://maverickservices.in/contact-us/. Alternatively, you can call us or email us through the details provided on our site."
+      ]
+    },
+    {
+      "tag": "about_us",
+      "patterns": ["Tell me about your company", "Can you tell me about your business?", "What does Maverick do?"],
+      "responses": [
+        "Maverick Services is a New Delhi-based IT and Business Services provider. We offer a combination of IT solutions, digital marketing, and creative services to help businesses grow online. Our team focuses on strategizing and executing projects to enhance your brand's presence."
+      ]
+    },
+    {
+      "tag": "website",
+      "patterns": ["What is your website?", "Where can I find your website?", "Can you share your website URL?"],
+      "responses": [
+        "Our website is www.maverickservices.in. Feel free to explore our services and get in touch with us!"
+      ]
+    },
+    {
+      "tag": "faq",
+      "patterns": ["Do you have a FAQ?", "What are your frequently asked questions?", "Where can I find FAQs?"],
+      "responses": [
+        "You can find our FAQ section on the website. Here is the link: www.maverickservices.in/faq."
+      ]
+    },
+    {
+      "tag": "casual_questions",
+      "patterns": ["How are you?", "How was your day?", "What's up?", "How's it going?"],
+      "responses": ["I'm just a virtual assistant, but I'm here and ready to help you! How can I assist you today?"]
+    },
+    {
+      "tag": "unknown",
+      "patterns": ["se4wefew43ew", "asdf1234", "!!!@@@", "random gibberish"],
+      "responses": ["I didn't understand that."]
+    }
+  ]
+}
