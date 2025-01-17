@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import logging
 import os
 import string
-from utils import predict_intent, generate_response
+from app.utils import predict_intent, generate_response
 
 # Initialize Flask app
 app = Flask(__name__)
