@@ -5,20 +5,25 @@ import string
 import nltk
 from app.utils import predict_intent, generate_response
 
+
 # Set the NLTK data path manually
-# nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
-# if not os.path.exists(nltk_data_path):
-#     os.makedirs(nltk_data_path)
-# nltk.data.path.append(nltk_data_path)
+nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
+nltk.data.path.append(nltk_data_path)
 
-# # Attempt to find the 'punkt' tokenizer
-# try:
-#     nltk.data.find('tokenizers/punkt')
-# except LookupError:
-#     print("punkt not found, downloading...")
-#     nltk.download('punkt', download_dir=nltk_data_path)
+# Add this environment variable as a fallback
+os.environ['NLTK_DATA'] = nltk_data_path
 
-nltk.download('punkt')
+print(f"Using NLTK data path: {nltk_data_path}")
+
+# The punkt tokenizer should now be accessible without redownloading
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    print("punkt not found. Please ensure the nltk_data directory is included.")
+
+# nltk.download('punkt', download_dir='./nltk_data')
+
+# nltk.download('punkt')
 
 # Your code continues...
 # Initialize Flask app
