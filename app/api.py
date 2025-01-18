@@ -6,22 +6,13 @@ import nltk
 from app.utils import predict_intent, generate_response
 
 
-# Set the NLTK data path manually
 nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
+os.makedirs(nltk_data_path, exist_ok=True)  # Ensure the directory exists
 nltk.data.path.append(nltk_data_path)
 
-# Add this environment variable as a fallback
-os.environ['NLTK_DATA'] = nltk_data_path
-
-print(f"Using NLTK data path: {nltk_data_path}")
-
-# The punkt tokenizer should now be accessible without redownloading
-try:
-    nltk.data.find('tokenizers/punkt')
-except LookupError:
-    print("punkt not found. Please ensure the nltk_data directory is included.")
-
-nltk.download('punkt', download_dir=nltk_data_path)
+# Download the punkt tokenizer if not already present
+if not os.path.exists(os.path.join(nltk_data_path, 'tokenizers/punkt')):
+    nltk.download('punkt', download_dir=nltk_data_path)
 
 # nltk.download('punkt')
 
