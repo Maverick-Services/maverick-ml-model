@@ -21,7 +21,7 @@ try:
 except LookupError:
     print("punkt not found. Please ensure the nltk_data directory is included.")
 
-# nltk.download('punkt', download_dir='./nltk_data')
+nltk.download('punkt', download_dir=nltk_data_path)
 
 # nltk.download('punkt')
 
