@@ -30,7 +30,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 # Initialize cache
 # cache = Cache(app, config={'CACHE_TYPE': 'simple'})
-app.config['CACHE_TYPE'] = 'SimpleCache'
+app.config['CACHE_TYPE'] = os.getenv('CACHE_TYPE', 'SimpleCache')
 cache = Cache(app)
 
 # Track irrelevant messages per user (by IP address)
@@ -38,8 +38,8 @@ irrelevant_question_count = {}
 MAX_IRRELEVANT_QUESTIONS = 3
 
 @app.route('/api/chat', methods=['POST'])
-# @cache.cached(timeout=300) 
-@cache.cached(timeout=300)
+
+# @cache.cached(timeout=300)
 def chat():
     """Handle incoming messages and respond based on intent."""
     try:
