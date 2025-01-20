@@ -3,7 +3,7 @@ import logging
 import os
 import string
 import nltk
-from utils import predict_intent, generate_response
+from app.utils import predict_intent, generate_response
 from memory_profiler import profile 
 import gc 
 from flask_caching import Cache
