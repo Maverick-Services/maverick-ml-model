@@ -4,9 +4,9 @@ import os
 import string
 import nltk
 from app.utils import predict_intent, generate_response
-# from memory_profiler import profile 
-# import gc 
-# from flask_caching import Cache
+from memory_profiler import profile 
+import gc 
+from flask_caching import Cache
 
 nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
 os.makedirs(nltk_data_path, exist_ok=True)  # Ensure the directory exists
@@ -29,17 +29,17 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
 # Initialize cache
-# cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 # Track irrelevant messages per user (by IP address)
 irrelevant_question_count = {}
 MAX_IRRELEVANT_QUESTIONS = 3
 
 @app.route('/api/chat', methods=['POST'])
-# @profile
-# @cache.cached(timeout=300)
+@profile
+@cache.cached(timeout=300)
 def chat():
-    # gc.collect()
+    gc.collect()
     """Handle incoming messages and respond based on intent."""
     try:
         # Get the incoming message
