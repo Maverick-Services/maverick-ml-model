@@ -39,7 +39,6 @@ MAX_IRRELEVANT_QUESTIONS = 3
 @profile
 @cache.cached(timeout=300)
 def chat():
-    gc.collect()
     """Handle incoming messages and respond based on intent."""
     try:
         # Get the incoming message
