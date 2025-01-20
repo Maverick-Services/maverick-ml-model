@@ -12,8 +12,8 @@ nltk.data.path.clear()
 nltk.data.path.append(nltk_data_path)
 
 # Download the punkt tokenizer if not already present
-if not os.path.exists(os.path.join(nltk_data_path, 'tokenizers/punkt_tab')):
-    nltk.download('punkt_tab', download_dir=nltk_data_path)
+if not os.path.exists(os.path.join(nltk_data_path, 'tokenizers/punkt')):
+    nltk.download('punkt', download_dir=nltk_data_path)
 if not os.path.exists(os.path.join(nltk_data_path, 'corpora/wordnet')): 
     nltk.download('wordnet', download_dir=nltk_data_path)
 
