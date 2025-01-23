@@ -5,6 +5,7 @@ import string
 import nltk
 from app.utils import predict_intent, generate_response
 from flask_caching import Cache
+from flask_cors import CORS
 import shutil
 import gc
 
@@ -27,7 +28,7 @@ except Exception as e:
 
 # Initialize Flask app
 app = Flask(__name__)
-
+CORS(app)
 # Setup logging
 logging.basicConfig(level=logging.DEBUG)
 
