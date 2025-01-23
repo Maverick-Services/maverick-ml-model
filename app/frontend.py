@@ -11,7 +11,7 @@ if st.button("Send"):
     if user_message.strip():
         try:
             # Send POST request to Flask API
-            response = requests.post("http://127.0.0.1:8080/api/chat", json={"message": user_message})
+            response = requests.post("https://maverick-ml-model.onrender.com/api/chat", json={"message": user_message})
             if response.status_code == 200:
                 data = response.json()
                 bot_response = data.get('botResponse', 'No response received.')
