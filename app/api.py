@@ -3,7 +3,7 @@ import logging
 import os
 import string
 import nltk
-from app.utils import predict_intent, generate_response
+from utils import predict_intent, generate_response
 from flask_caching import Cache
 from flask_cors import CORS
 import shutil
@@ -39,6 +39,11 @@ cache = Cache(app)
 # Track irrelevant messages
 irrelevant_question_count = {}
 MAX_IRRELEVANT_QUESTIONS = 3
+
+@app.route('/api/ping', methods=['GET'])
+def ping():
+    """Health check endpoint."""
+    return jsonify({'status': 'Model is running'}), 200
 
 
 @app.route('/api/chat', methods=['POST'])
