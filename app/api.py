@@ -3,7 +3,7 @@ import logging
 import os
 import string
 import nltk
-from utils import predict_intent, generate_response
+from app.utils import predict_intent, generate_response
 from flask_caching import Cache
 from flask_cors import CORS
 import shutil
