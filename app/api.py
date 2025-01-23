@@ -33,7 +33,7 @@ CORS(app)
 logging.basicConfig(level=logging.DEBUG)
 
 # Initialize caching (disable for testing)
-app.config['CACHE_TYPE'] = 'null'
+app.config['CACHE_TYPE'] = 'simple'
 cache = Cache(app)
 
 # Track irrelevant messages
