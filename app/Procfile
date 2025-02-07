@@ -1,2 +1,2 @@
-web: gunicorn -w 4 -b 0.0.0.0:$PORT app.api:app --timeout 120 --log-level debug
+web: gunicorn -w 4 -b 0.0.0.0:$PORT app.api:app --timeout 300 --log-level debug
 
